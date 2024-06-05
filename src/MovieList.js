@@ -1,5 +1,5 @@
 import MovieCard from "./MovieCard";
-const MovieList = (props) => {
+const MovieList = ({ movies, textInput }) => {
   return (
     <div
       style={{
@@ -9,9 +9,11 @@ const MovieList = (props) => {
         flexWrap: "wrap",
       }}
     >
-      {props.movies.map((el) => (
-        <MovieCard el={el} />
-      ))}
+      {movies
+        .filter((el) => el.name.includes(textInput))
+        .map((el) => (
+          <MovieCard el={el} />
+        ))}
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import ReactStars from "react-stars";
 const MovieCard = (props) => {
   return (
     <div className="screen-2">
@@ -8,6 +9,13 @@ const MovieCard = (props) => {
       <div className="main-heading">
         <h1 className="title">{props.el.name}</h1>
         <div className="row">
+          <ReactStars
+            count={5}
+            size={24}
+            color2={"#ffd700"}
+            value={props.el.rating}
+            edit={false}
+          />
           <span>{props.el.date}</span>
           <span className="r">R</span>
           <span></span>
